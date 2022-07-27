@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//BACK OFFICE AREA PUBBLICA
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //BACK OFFICE AREA PUBBLICA - AUTH
 Auth::routes();
