@@ -5,7 +5,7 @@
             <div class="col-6">
             <h2>MyBlog</h2>
             </div>
-            <div class="col-6">
+            <div class="col-6 nav_link">
                 <a href="admin/home">Area Riservata</a>
             </div>
         </div>
@@ -22,5 +22,9 @@ export default {
 <style lang="scss">
     header{
         padding: .625rem 0;
+    }
+
+    .nav_link{
+        text-align: right;
     }
 </style>
