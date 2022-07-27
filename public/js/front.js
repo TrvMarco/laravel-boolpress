@@ -2202,7 +2202,13 @@ var render = function render() {
       staticClass: "card-body"
     }, [_c("p", {
       staticClass: "card-text"
-    }, [_vm._v(_vm._s(post.content))]), _vm._v(" "), _c("a", {
+    }, [_vm._v(_vm._s(post.content))]), _vm._v(" "), _c("li", [_c("router-link", {
+      attrs: {
+        to: {
+          name: "SinglePost"
+        }
+      }
+    }, [_vm._v("Contatti")])], 1), _c("a", {
       staticClass: "btn btn-primary",
       attrs: {
         href: "#"
@@ -18808,6 +18814,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _pages_ChiSiamo__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: "/contatti",
+    name: "Contatti",
+    component: _pages_Contatti__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    path: "/post/{slug}",
     name: "Contatti",
     component: _pages_Contatti__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]

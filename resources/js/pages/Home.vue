@@ -7,7 +7,7 @@
                 <h5 class="card-header">{{post.title}}</h5>
                 <div class="card-body">
                     <p class="card-text">{{post.content}}</p>
-                    <a href="#" class="btn btn-primary">Visualizza i dettagli</a>
+                    <li><router-link :to="{ name: 'SinglePost' }">Contatti</router-link></li><a href="#" class="btn btn-primary">Visualizza i dettagli</a>
                 </div>
                 </div>
             </div>

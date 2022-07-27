@@ -25,6 +25,11 @@ const router = new VueRouter({
             name: "Contatti",
             component: Contatti
         },
+        {
+            path: "/post/{slug}",
+            name: "Contatti",
+            component: Contatti
+        },
     ]
 });
 
