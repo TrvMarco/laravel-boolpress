@@ -9,6 +9,17 @@
                 <a href="admin/home">Area Riservata</a>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="container">
+                <ul>
+                    <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+                    <li><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
+                    <li><router-link :to="{ name: 'Contatti' }">Contatti</router-link></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
     </div>
   </header>
 </template>
