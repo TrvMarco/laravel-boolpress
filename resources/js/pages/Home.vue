@@ -7,7 +7,7 @@
                 <h5 class="card-header">{{post.title}}</h5>
                 <div class="card-body">
                     <p class="card-text">{{post.content}}</p>
-                    <li><router-link :to="{ name: 'SinglePost' }">Contatti</router-link></li><a href="#" class="btn btn-primary">Visualizza i dettagli</a>
+                    <router-link class="btn-blue" :to="{ name: 'SinglePost',  params: { slug : post.slug } }">Visualizza i dettagli</router-link>
                 </div>
                 </div>
             </div>
@@ -27,7 +27,6 @@ export default {
     created(){
         axios.get('http://127.0.0.1:8000/api/posts')
         .then((response) => {
-            console.log(response.data);
             this.posts = response.data;
         })
         .catch((error) => {

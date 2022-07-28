@@ -1977,7 +1977,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
-      console.log(response.data);
       _this.posts = response.data;
     })["catch"](function (error) {
       console.log(error);
@@ -2010,7 +2009,22 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SinglePost'
+  name: 'SinglePost',
+  data: function data() {
+    return {
+      post: null
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (response) {
+      console.log(response.data);
+      _this.post = response.data;
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -2230,18 +2244,17 @@ var render = function render() {
       staticClass: "card-body"
     }, [_c("p", {
       staticClass: "card-text"
-    }, [_vm._v(_vm._s(post.content))]), _vm._v(" "), _c("li", [_c("router-link", {
+    }, [_vm._v(_vm._s(post.content))]), _vm._v(" "), _c("router-link", {
+      staticClass: "btn-blue",
       attrs: {
         to: {
-          name: "SinglePost"
+          name: "SinglePost",
+          params: {
+            slug: post.slug
+          }
         }
       }
-    }, [_vm._v("Contatti")])], 1), _c("a", {
-      staticClass: "btn btn-primary",
-      attrs: {
-        href: "#"
-      }
-    }, [_vm._v("Visualizza i dettagli")])])]);
+    }, [_vm._v("Visualizza i dettagli")])], 1)]);
   }), 0)])])]);
 };
 
@@ -2300,7 +2313,13 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main");
+  return _c("main", [_c("div", {
+    staticClass: "container pb-5"
+  }, [_c("h2", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("div", [_c("ul", _vm._l(_vm.post.tags, function (tag) {
+    return _c("li", {
+      key: tag.id
+    }, [_vm._v(_vm._s(tag.name))]);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [];
@@ -19045,7 +19064,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "Contatti",
     component: _pages_Contatti__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: "/post/{slug}",
+    path: "/post/:slug",
     name: "SinglePost",
     component: _pages_SinglePost__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {

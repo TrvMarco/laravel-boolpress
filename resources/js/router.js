@@ -28,7 +28,7 @@ const router = new VueRouter({
             component: Contatti
         },
         {
-            path: "/post/{slug}",
+            path: "/post/:slug",
             name: "SinglePost",
             component: SinglePost
         },
