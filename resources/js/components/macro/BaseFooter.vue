@@ -2,7 +2,7 @@
   <footer>
     <div class="container">
     <hr>
-    <h5>Made da trvmad </h5>
+    <h5>Made by trv </h5>
     </div>
   </footer>
 </template>

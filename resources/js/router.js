@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ChiSiamo from "./pages/ChiSiamo";
 import Contatti from "./pages/Contatti";
 import SinglePost from "./pages/SinglePost";
+import PageNotFound from "./pages/PageNotFound"
 
 const router = new VueRouter({
     mode: "history",
@@ -31,6 +32,12 @@ const router = new VueRouter({
             name: "SinglePost",
             component: SinglePost
         },
+        {
+            path: "/*",
+            name: "PageNotFound",
+            component: PageNotFound
+        },
+        
     ]
 });
 

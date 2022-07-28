@@ -3,7 +3,7 @@
         <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="card my-5" v-for="post in posts" :key="post.id">
+                <div class="card my-3" v-for="post in posts" :key="post.id">
                 <h5 class="card-header">{{post.title}}</h5>
                 <div class="card-body">
                     <p class="card-text">{{post.content}}</p>
