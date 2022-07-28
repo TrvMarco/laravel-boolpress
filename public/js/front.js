@@ -2315,7 +2315,7 @@ var render = function render() {
 
   return _c("main", [_c("div", {
     staticClass: "container pb-5"
-  }, [_c("h2", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("div", [_c("ul", _vm._l(_vm.post.tags, function (tag) {
+  }, [_c("h2", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("div", [_c("span", [_vm._v("Tag associati al post:")]), _vm._v(" "), _c("ul", _vm._l(_vm.post.tags, function (tag) {
     return _c("li", {
       key: tag.id
     }, [_vm._v(_vm._s(tag.name))]);

@@ -5,6 +5,7 @@
         <hr>
         <p>{{post.content}}</p>
         <div>
+          <span>Tag associati al post:</span> 
           <ul>
             <li v-for="tag in post.tags" :key="tag.id">{{tag.name}}</li>
           </ul>
