@@ -4,7 +4,7 @@
         <h2>{{post.title}}</h2>
         <hr>
         <p>{{post.content}}</p>
-        <div>
+        <div v-if="post.tags.length > 0">
           <span>Tag associati al post:</span> 
           <ul>
             <li v-for="tag in post.tags" :key="tag.id">{{tag.name}}</li>

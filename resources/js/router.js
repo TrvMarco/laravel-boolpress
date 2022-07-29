@@ -7,7 +7,10 @@ import Home from "./pages/Home";
 import ChiSiamo from "./pages/ChiSiamo";
 import Contatti from "./pages/Contatti";
 import SinglePost from "./pages/SinglePost";
-import PageNotFound from "./pages/PageNotFound"
+import Categorie from "./pages/Categorie";
+import SingleCategory from "./pages/SingleCategory";
+import PageNotFound from "./pages/PageNotFound";
+
 
 const router = new VueRouter({
     mode: "history",
@@ -31,6 +34,16 @@ const router = new VueRouter({
             path: "/post/:slug",
             name: "SinglePost",
             component: SinglePost
+        },
+        {
+            path: "/categorie",
+            name: "Categorie",
+            component: Categorie
+        },
+        {
+            path: "/categorie/:slug",
+            name: "SingleCategory",
+            component: SingleCategory
         },
         {
             path: "/*",
