@@ -16,6 +16,7 @@
                     <li><router-link :to="{ name: 'home' }">Home</router-link></li>
                     <li><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
                     <li><router-link :to="{ name: 'Contatti' }">Contatti</router-link></li>
+                    <li><router-link :to="{ name: 'Categorie' }">Categorie</router-link></li>
                 </ul>
             </div>
         </div>
@@ -30,12 +31,30 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     header{
         padding: .625rem 0;
     }
 
     .nav_link{
         text-align: right;
+    }
+
+    ul{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        column-gap: 10px;
+
+        li{
+            padding: .625rem 1.25rem;
+            background-color: aquamarine;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+
+        }
     }
 </style>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -58,6 +59,7 @@ class PostController extends Controller
         $newPost->slug = Str::of($data['title'])->slug('-');  
         $newPost->published = isset($data['published']);
         $newPost->save();
+        $img_path = Storage::put('uploads', $data['immagine']);
 
         if(isset($data['tags'])){
             $newPost->tags()->sync($data['tags']);

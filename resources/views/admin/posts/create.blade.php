@@ -22,6 +22,12 @@
                 @enderror
             </div>
             <div class="form-group">
+              <form action="" method="post" enctype="multipart/form-data">
+                <label for="immagine">Immagine:</label>
+                <input type="file" class="form-control-file" id="immagine" name="immagine" value="{{old('immagine')}}">
+              </form>
+            </div>
+            <div class="form-group">
               <label for="category">Categoria post:</label>
               <select class="form-control @error('category_id') is-invalid @enderror" id="category" name="category_id">
                     <option value="">Seleziona</option>
