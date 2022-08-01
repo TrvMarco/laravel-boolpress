@@ -1,7 +1,8 @@
 <template>
   <main>
     <div class="container pb-5">
-        <h2>{{post.title}}</h2>
+        <img style="width: 300px" v-if="post.immagine" :src="`/storage/${post.immagine}`" :alt="post.title">
+        <h2 v-if="post.title">{{post.title}}</h2>
         <hr>
         <p>{{post.content}}</p>
         <div v-if="post.tags.length > 0">

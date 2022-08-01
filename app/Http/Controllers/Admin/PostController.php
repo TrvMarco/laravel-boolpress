@@ -50,7 +50,8 @@ class PostController extends Controller
             'content' => 'required|string',
             'published' => 'sometimes|accepted',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'nullable|exists:tags,id'
+            'tags' => 'nullable|exists:tags,id',
+            'immagine' => 'nullable|mimes:png,jpeg,jpg'
         ]);
         
         $data = $request->all(); 
@@ -58,8 +59,9 @@ class PostController extends Controller
         $newPost->fill($data);
         $newPost->slug = Str::of($data['title'])->slug('-');  
         $newPost->published = isset($data['published']);
+        $newPost->immagine = Storage::put('uploads', $data['immagine']);
         $newPost->save();
-        $img_path = Storage::put('uploads', $data['immagine']);
+
 
         if(isset($data['tags'])){
             $newPost->tags()->sync($data['tags']);
